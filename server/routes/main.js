@@ -89,17 +89,6 @@ router.post('/search', async (req, res) => { // Ensure the route is correctly de
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
 // Hàm chèn dữ liệu
 function insertPostData() {
     Post.insertMany([
