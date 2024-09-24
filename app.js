@@ -1,11 +1,14 @@
 require('dotenv').config();
 const express = require("express");
 const expressLayout = require("express-ejs-layouts"); // fix typo
+const connectDB = require('./server/config/db');
+const { connect } = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 5000; // fixed the PORT assignment
 
 app.use(express.static('public'));
-
+// Connect to DB
+connectDB();
 // Templating Engine
 app.use(expressLayout);
 app.set('layout', './layouts/main');
