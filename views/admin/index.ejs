@@ -1,20 +1,46 @@
-<h3>Sign In</h3>
-<form action="/admin" method="POST">
+<h3 id="form-title">Sign In</h3>
+
+<form id="login-form" action="/admin" method="POST">
   <label for="username"><b>Username</b></label>
-  <input type="text" placeholder="Enter Username" name="username" />
+  <input type="text" placeholder="Nhập Username" name="username" />
 
   <label for="password"><b>Password</b></label>
-  <input type="text" placeholder="Enter Username" name="password" />
+  <input type="password" placeholder="Nhập Password" name="password" />
 
   <input type="submit" value="Login" class="btn" />
 </form>
-<h3>Register</h3>
-<form action="/register" method="POST">
+
+<form id="register-form" action="/register" method="POST" style="display: none">
   <label for="username"><b>Username</b></label>
   <input type="text" placeholder="Enter Username" name="username" />
 
   <label for="password"><b>Password</b></label>
-  <input type="text" placeholder="Enter Username" name="password" />
+  <input type="password" placeholder="Enter Password" name="password" />
 
   <input type="submit" value="Register" class="btn" />
 </form>
+
+<button id="toggle-btn" class="btn">Switch to Register</button>
+
+<script>
+  const toggleBtn = document.getElementById("toggle-btn");
+  const loginForm = document.getElementById("login-form");
+  const registerForm = document.getElementById("register-form");
+  const formTitle = document.getElementById("form-title");
+
+  toggleBtn.addEventListener("click", () => {
+    if (loginForm.style.display === "none") {
+      // Hiển thị form đăng nhập
+      loginForm.style.display = "block";
+      registerForm.style.display = "none";
+      formTitle.textContent = "Sign In";
+      toggleBtn.textContent = "Switch to Register";
+    } else {
+      // Hiển thị form đăng ký
+      loginForm.style.display = "none";
+      registerForm.style.display = "block";
+      formTitle.textContent = "Register";
+      toggleBtn.textContent = "Switch to Login";
+    }
+  });
+</script>

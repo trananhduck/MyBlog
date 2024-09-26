@@ -1,7 +1,8 @@
 <div class="author">
-  <h1 class="author__heading">Hi, I am Duckmaniac</h1>
-  <p class="author__body">Web developer and rapper.</p>
+  <h1 class="author__heading">Hi, I am Raddy.</h1>
+  <p class="author__body">Web developer and content creator.</p>
 </div>
+
 <img
   src="/img/abc.jpg"
   alt="person looking out through window"
@@ -9,9 +10,11 @@
   width="981"
   height="528"
 />
+
 <section class="articles">
-  <h2 class="articles__heading">Latest Posts</h2>
-  <ul class="articles-ul">
+  <h2 class="articles__heading">Bài viết gần đây</h2>
+
+  <ul class="article-ul">
     <% data.forEach(post => { %>
     <li>
       <a href="/post/<%= post._id %>">
@@ -23,9 +26,10 @@
     </li>
     <% }) %>
   </ul>
-  <% if (currentPage !== null) { %>
-  <a href="/?page=<%= currentPage %>" class="pagination"
-    >&lt; View Older Posts</a
+
+  <% if (nextPage !== null) { %>
+  <a href="/?page=<%= nextPage %>" class="pagination"
+    >&lt; Xem bài viết cũ hơn</a
   >
   <% } %>
 </section>
