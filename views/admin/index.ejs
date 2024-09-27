@@ -1,4 +1,4 @@
-<h3 id="form-title">Sign In</h3>
+<h3 id="form-title">Đăng nhập</h3>
 
 <form id="login-form" action="/admin" method="POST">
   <label for="username"><b>Username</b></label>
@@ -12,15 +12,15 @@
 
 <form id="register-form" action="/register" method="POST" style="display: none">
   <label for="username"><b>Username</b></label>
-  <input type="text" placeholder="Enter Username" name="username" />
+  <input type="text" placeholder="Nhập Username" name="username" />
 
   <label for="password"><b>Password</b></label>
-  <input type="password" placeholder="Enter Password" name="password" />
+  <input type="password" placeholder="Nhập Password" name="password" />
 
-  <input type="submit" value="Register" class="btn" />
+  <input type="submit" value="Đăng ký" class="btn" />
 </form>
 
-<button id="toggle-btn" class="btn">Switch to Register</button>
+<button id="toggle-btn" class="btn">Đăng ký</button>
 
 <script>
   const toggleBtn = document.getElementById("toggle-btn");
@@ -33,14 +33,14 @@
       // Hiển thị form đăng nhập
       loginForm.style.display = "block";
       registerForm.style.display = "none";
-      formTitle.textContent = "Sign In";
-      toggleBtn.textContent = "Switch to Register";
+      formTitle.textContent = "Đăng nhập";
+      toggleBtn.textContent = "Đăng ký";
     } else {
       // Hiển thị form đăng ký
       loginForm.style.display = "none";
       registerForm.style.display = "block";
-      formTitle.textContent = "Register";
-      toggleBtn.textContent = "Switch to Login";
+      formTitle.textContent = "Đăng nhập";
+      toggleBtn.textContent = "Đăng nhập";
     }
   });
 </script>
